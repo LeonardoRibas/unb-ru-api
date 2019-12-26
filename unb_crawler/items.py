@@ -9,6 +9,6 @@ import scrapy
 
 
 class UnbCrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    campus = scrapy.Field()
+    date = scrapy.Field()
+    pdf = scrapy.Field()
