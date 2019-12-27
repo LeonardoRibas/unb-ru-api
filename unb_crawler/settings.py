@@ -64,9 +64,12 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'unb_crawler.pipelines.UnbCrawlerPipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'unb_crawler.pipelines.ValidateDatePipeline': 300,
+    'unb_crawler.pipelines.AdjustDatePipeline': 500,
+    'unb_crawler.pipelines.AdjustCampusPipeline': 600,
+    'unb_crawler.pipelines.JsonWriterPipeline': 800
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
