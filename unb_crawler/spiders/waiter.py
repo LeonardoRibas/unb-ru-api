@@ -26,7 +26,6 @@ class WaiterSpider(scrapy.Spider):
     def parse(self, response):
         campus = None
         date = None
-        pdf = None
         for element in response.css(".item-page p"):
             testCampus = getCampus(element)
             if testCampus:
@@ -34,8 +33,8 @@ class WaiterSpider(scrapy.Spider):
             date = getDate(element)
             pdfPath = getPdfPath(element)
             if campus and date and pdfPath:
-                pdf = response.follow(pdfPath).url    
-                item = UnbCrawlerItem(campus=campus, date=date, pdf=pdf)
+                pdf = response.urljoin(pdfPath)  
+                item = UnbCrawlerItem(campus=campus, date=date, pdf_url=[pdf])
                 yield item
             
              
