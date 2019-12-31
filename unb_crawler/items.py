@@ -11,4 +11,5 @@ import scrapy
 class UnbCrawlerItem(scrapy.Item):
     campus = scrapy.Field()
     date = scrapy.Field()
+    pdf_url = scrapy.Field()
     pdf = scrapy.Field()

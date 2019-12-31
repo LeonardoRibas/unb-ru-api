@@ -68,8 +68,14 @@ ITEM_PIPELINES = {
     'unb_crawler.pipelines.ValidateDatePipeline': 300,
     'unb_crawler.pipelines.AdjustDatePipeline': 500,
     'unb_crawler.pipelines.AdjustCampusPipeline': 600,
-    'unb_crawler.pipelines.JsonWriterPipeline': 800
+    'unb_crawler.pipelines.DownloaderPipeline': 800,
+    'unb_crawler.pipelines.JsonWriterPipeline': 1000
 }
+
+FILES_STORE = '/home/leo/projects/unb-ru-api/'
+
+FILES_URLS_FIELD = 'pdf_url'
+FILES_RESULT_FIELD = 'pdf'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
